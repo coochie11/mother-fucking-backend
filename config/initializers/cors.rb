@@ -8,10 +8,10 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins /localhost\:\d+/, /mother-fucking-react-frontend\.herokuapp\.com/
+    # origins '*'
     
-
-    resource '*',
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+    resource "*",
+    header: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head],
+    # credentials: true
   end
 end
